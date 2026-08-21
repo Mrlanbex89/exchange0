@@ -1,0 +1,133 @@
+{
+  "theme": "Light mode by default (Financial Clarity). High-end, pristine, and authoritative. Toggle available for Dark mode (Obsidian Terminal).",
+  "archetype": "Swiss & High-Contrast (Archetype 4) mixed with organic trust.",
+  "rtl_requirements": {
+    "dir": "rtl",
+    "language": "fa-IR",
+    "typography": "High-quality Persian web fonts are mandatory.",
+    "alignment": "Right-to-left optical alignment. All standard 'ml'/'mr' Tailwind classes MUST be replaced with 'ms'/'me' (margin-start/margin-end)."
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap",
+    "primary_font": "Vazirmatn, sans-serif",
+    "number_font": "JetBrains Mono, monospace",
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-black",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base leading-relaxed text-gray-800",
+      "numbers": "font-mono tracking-tighter"
+    },
+    "guidelines": "Do NOT use Inter. Use Vazirmatn for all Persian text. Use JetBrains Mono EXCLUSIVELY for exchange rates and calculator numbers to give an elite trading terminal aesthetic."
+  },
+  "colors": {
+    "background": {
+      "light": "#F9F9F8",
+      "dark": "#0A0A0B"
+    },
+    "surface": {
+      "light": "#FFFFFF",
+      "dark": "#121214"
+    },
+    "primary": {
+      "light": "#050505",
+      "dark": "#FAFAFA"
+    },
+    "rates": {
+      "buy": "#0B6E4F",
+      "sell": "#D95C14"
+    },
+    "borders": {
+      "light": "#E5E5E0",
+      "dark": "#27272A"
+    },
+    "forbidden_colors": ["purple", "violet", "teal green", "teal blue", "magenta"],
+    "guidelines": "Use stark contrasts. The background is a tinted warm off-white (#F9F9F8) not pure white. Rate colors (Buy/Sell) use Forest Green and Terracotta/Burnt Orange for high visibility without looking like generic neon traffic lights."
+  },
+  "layout": {
+    "public_page": {
+      "strategy": "The 'Bento' Grid Protocol (Mode A)",
+      "structure": "Grid cols-1 md:grid-cols-12 gap-8. Hero text takes col-span-full md:col-span-8. Exchange rates sit in rigid, high-density cards.",
+      "spacing": "Generous spacing. p-8 or p-12 on outer containers."
+    },
+    "admin_dashboard": {
+      "strategy": "High Density Grid (Mode B)",
+      "structure": "Grid cols-1 md:grid-cols-3 lg:grid-cols-4. Strict hierarchy, functional density.",
+      "surface": "Flat solid surfaces. 1px subtle borders. Max 8px border-radius (rounded-md)."
+    }
+  },
+  "component_guidelines": {
+    "rate_cards": {
+      "style": "Neumorphism (Tactile) variants without the heavy shadow. Use crisp 1px borders (border-black/5 or border-white/10). Flat background matching surface color.",
+      "interaction": "Subtle hover lift (-translate-y-1) and slight shadow (shadow-sm) increase. No generic color overlays."
+    },
+    "forms_and_calculator": {
+      "style": "Shadcn components heavily customized. Remove default Vercel look. Input fields should have solid backgrounds (bg-gray-50) and sharp borders. No generic transparent dropdowns.",
+      "interaction": "Focus states must be high contrast (focus:ring-2 focus:ring-black)."
+    },
+    "navigation": {
+      "style": "Solid background or high-opacity Glassmorphism (backdrop-blur-xl bg-white/80) to ensure readability."
+    },
+    "toasts": {
+      "library": "sonner",
+      "style": "Minimalist, matching surface colors, placed at bottom-center or bottom-right."
+    }
+  },
+  "visual_enhancers": {
+    "texture": "Subtle grain overlay on hero section to kill digital flatness.",
+    "marquee": "Use a slow, elegant marquee for conversion rates (e.g., USD to TRY, EUR to USD) running continuously below the hero.",
+    "icons": "lucide-react for UI icons. Must use data-testid for all interactive icons."
+  },
+  "motion": {
+    "entrance": "Staggered fade-up for rate cards using framer-motion.",
+    "interactive": "Scale down 0.98 on active (click) states for buttons.",
+    "guidelines": "Respect prefers-reduced-motion. Do not use 'transition-all', specify transform and opacity."
+  },
+  "responsive": {
+    "breakpoint": "Mobile-first. All designs default to grid-cols-1.",
+    "layout": "Stack bento grid into vertical lists on mobile. Ensure padding is comfortable (p-4 to p-6).",
+    "typography": "Scale down massive headings. text-5xl on desktop becomes text-4xl on mobile.",
+    "overflow_guard": "Ensure max-w-[100vw] and overflow-x-hidden on the main wrapper. Flex children should have min-w-0.",
+    "tap_targets": "Min 44x44px for all buttons and inputs (calculator).",
+    "image_constraints": "max-h-[60vh] on mobile for any visual header images."
+  },
+  "accessibility": {
+    "contrast": "Ensure text over Buy/Sell tags passes APCA/WCAG AA.",
+    "focus": "Explicit focus rings on all inputs.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='admin-login-button', data-testid='save-rates-button')."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1498262257252-c282316270bc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGZpbmFuY2UlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg3MTcwNjA3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Curved white architectural ribs. Use as a subtle hero background or bento box image overlay with heavy masking (bg-white/90) to create texture without distracting from rates.",
+      "category": "Hero / Abstract Finance"
+    },
+    "admin_login_side": {
+      "url": "https://images.unsplash.com/photo-1462556791646-c201b8241a94?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGZpbmFuY2UlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg3MTcwNjA3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Low angle blue geometric curtain wall. Use for the split-screen admin login page (left or right side depending on RTL).",
+      "category": "Login Screen Side Art"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly apply `dir='rtl'` on the html/body tag.",
+    "Use Tailwind's logical properties (ps-, pe-, ms-, me-, text-start, text-end) instead of physical ones (pl-, pr-).",
+    "Integrate 'Vazirmatn' as the primary font and apply it to the body. Use 'JetBrains Mono' specifically for currency amounts and timestamps to give it a terminal look.",
+    "Avoid Shadcn HTML `<input type='date'>`, `<select>` -> Use Shadcn React components instead.",
+    "Ensure the hero header is NOT transparent without a blur backdrop if content scrolls under.",
+    "Implement Sonner for toast notifications (e.g., 'ذخیره تغییرات با موفقیت انجام شد').",
+    "Include an Exchange Calculator on the public page with Shadcn Select and Inputs.",
+    "All interactive elements MUST have `data-testid` (e.g. data-testid='exchange-calc-submit').",
+    "Use Forest Green (#0B6E4F) for Buy (خرید) and Terracotta (#D95C14) for Sell (فروش). Avoid generic violet/purple entirely.",
+    "Ensure mobile-first styling: heavily pad desktop containers (p-8 to p-12) but constrain to p-4 on mobile viewports."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do NOT use 'transition: all', write explicit transition properties.",
+    "Do NOT center align the entire app container.",
+    "Create depth with layered elements and 1px crisp borders, not just shadows.",
+    "No emojis for icons. Use lucide-react.",
+    "Use pre-existing UI components from src/components/ui/ before building custom.",
+    "Include data-testid on every button, link, and form input.",
+    "Files are .js (not .tsx) so ensure to output JSX valid in pure React/JS.",
+    "For toasts, use `sonner` located at `/app/src/components/ui/sonner.js` (or adapt Shadcn standard setup for JS)."
+  ]
+}
